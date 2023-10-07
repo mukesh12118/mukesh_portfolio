@@ -1,0 +1,58 @@
+.project_main_container{
+    h1{
+        text-align: center;
+        margin-bottom: 5%;
+    }
+
+    .mains{
+        .project{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px auto;
+            width: 70%;
+            gap: 8%;
+            .left_container{
+                width: 50%;
+                h4{
+                    color: #fff;
+                    font-size: 30px;
+                    margin-bottom: 20px;
+                }
+                p{
+                    margin: 0;
+                    
+                }
+                ul{
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    li{
+                        list-style: none;
+                        position: relative;
+                        text-transform: capitalize;
+                        &::after{
+                            content: ",";
+                            position: absolute;
+                            right:-5px ;
+                        }
+                        &:last-child{
+                            &::after{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .right_container{
+                width: 50%;
+                img{
+                    height: 100%;
+                    border-radius: 10px;
+                    width: 80%;
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+}

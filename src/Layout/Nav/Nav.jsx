@@ -1,14 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { PngImage } from "../../Components/SharedComponents/ImageComponent";
 import "./Nav.scss";
+import { useEffect, useState } from "react";
 
 export const Nav = () => {
 
+    const location = useLocation();
+    const [locate,setLocate] = useState();
+
+    useEffect(()=>{
+        const currentLocation = location.pathname;
+        console.log(currentLocation);
+        setLocate(currentLocation);
+        console.log(location)
+    },[location])
+
     const navData = [
         { imgSrc: 'home', header: 'Home', path: '/' },
-        { imgSrc: 'about', header: 'About', path: '/about' },
+        { imgSrc: 'contact', header: 'Contact', path: '/contact' },
         { imgSrc: 'coding', header: 'Projects', path: '/projects' },
-        { imgSrc: 'resume', header: 'Resume', path: '' },
+        { imgSrc: 'resume', header: 'Resume', path: '/resume' },
     ]
 
     return (
@@ -23,7 +34,7 @@ export const Nav = () => {
                             const { imgSrc, header, path } = val
                             return (
                                 <li key={i}>
-                                    <Link to={path} title={header}>
+                                    <Link to={path} className={locate== path ? 'active' : ''} title={header}>
                                         <PngImage
                                             imageName={imgSrc}
                                             alt={header}

@@ -1,0 +1,13 @@
+.resume_container{
+    min-height: 90vh;
+    width: 100%;
+    .image_container{
+        height: auto;
+        width: 40%;
+        margin: 0 auto;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

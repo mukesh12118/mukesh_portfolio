@@ -10,21 +10,23 @@ export function Layout() {
                 <div className="nav_container">
                     <Nav />
                 </div>
-                <div className="outlet_container">
-                    <Outlet />
+                <div className="main_container">
+                    <div className="outlet_container">
+                        <Outlet />
+                    </div>
+                    <footer>
+                        <ul>
+                            <li>
+                                Developed by Mukesh
+                            </li>
+
+                            <li>Copyright &copy; 2023 AM</li>
+                            <li>
+
+                            </li>
+                        </ul>
+                    </footer>
                 </div>
-                <footer>
-                    <ul>
-                        <li>
-                            Developed by Mukesh 
-                        </li>
-
-                        <li>Copyright &copy; 2023 AM</li>
-                        <li>
-
-                        </li>
-                    </ul>
-                </footer>
             </div>
             <div className="stars"></div>
 
