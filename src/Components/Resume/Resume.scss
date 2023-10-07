@@ -1,12 +1,16 @@
 .resume_container{
     min-height: 90vh;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .image_container{
-        height: auto;
-        width: 40%;
+        height: 50%;
         margin: 0 auto;
+        width: 25%;
         img{
-            height: 100%;
+            height: auto;
+            object-fit: contain;
             width: 100%;
         }
     }
