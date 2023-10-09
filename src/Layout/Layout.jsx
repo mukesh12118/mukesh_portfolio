@@ -8,7 +8,7 @@ export function Layout() {
 
     const footerLinks = [
         { name: "Instagram", imgName: 'instagram', path: 'https://www.instagram.com/the_hpy_kid' },
-        { name: "FB", imgName: 'fb', path: '' },
+        { name: "FB", imgName: 'fb', path: 'https://www.facebook.com/profile.php?id=100007750334357' },
         { name: "Git", imgName: 'github', path: '' },
         { name: "LinkedIn", imgName: 'linkedin', path: 'https://www.linkedin.com/in/mukesh-a-221322234' },
         { name: "Mail", imgName: 'mail', path: 'mailto:iammukesha@gmail.com' },
