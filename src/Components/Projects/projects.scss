@@ -3,55 +3,118 @@
         text-align: center;
         margin-bottom: 5%;
     }
-
     .mains{
-        .project{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 30px auto;
+        .project_mains{
             width: 70%;
-            gap: 8%;
-            .left_container{
-                width: 50%;
-                h4{
-                    color: #fff;
-                    font-size: 30px;
-                    margin-bottom: 20px;
+            margin: 30px auto;
+            h4.project_head{
+                color: aqua;
+                font-size: var(--fs28);
+                text-align: center;
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+
                 }
-                p{
-                    margin: 0;
-                    
-                }
-                ul{
-                    display: flex;
-                    gap: 10px;
-                    align-items: center;
-                    li{
-                        list-style: none;
-                        position: relative;
-                        text-transform: capitalize;
-                        &::after{
-                            content: ",";
-                            position: absolute;
-                            right:-5px ;
-                        }
-                        &:last-child{
+            }
+            .project{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 8%;
+                .left_container{
+                    width: 50%;
+                    h4,p{
+                        color: #bbbbbd;
+                    }
+                    p{
+                        margin: 0;
+                    }
+                    .sub_head{
+                        font-weight: 500;
+                        font-size: var(--fs19);
+                        margin-top: 20px;
+                        color: #9067c6;
+                    }
+                    ul{
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 10px;
+                        align-items: center;
+                        li{
+                            list-style: none;
+                            position: relative;
+                            color: #fff;
+                            white-space: nowrap;
+                            text-transform: capitalize;
                             &::after{
-                                display: none;
+                                content: ",";
+                                position: absolute;
+                                right:-5px ;
+                            }
+                            &:last-child{
+                                &::after{
+                                    display: none;
+                                }
                             }
                         }
                     }
                 }
-            }
-            .right_container{
-                width: 50%;
-                img{
-                    height: 100%;
-                    border-radius: 10px;
-                    width: 80%;
-                    max-width: 400px;
+                .right_container{
+                    width: 50%;
+                    img{
+                        height: 100%;
+                        border-radius: 10px;
+                        width: var(--width80);
+                        max-width: 400px;
+                    }
                 }
+            }
+        }
+    }
+}
+
+@media (max-width:1200px){
+    .project_main_container {
+        .mains{
+            .project_mains{
+                width: 80%;
+            }
+        }
+    }
+}
+
+@media (max-width:991px){
+    .project_main_container {
+        .mains{
+            .project_mains{
+                width: 85%;
+                .project{
+                    flex-direction: column-reverse;
+                    gap: 20px;
+                    a{
+                        width: 90%;
+                        margin: 0 auto;
+                    }
+                    .left_container{
+                        width: 90%;
+                    }
+                    .right_container{
+                        width: 75%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px){
+    .project_main_container{
+        .mains{
+            .project_mains{
+                width: 90%;
             }
         }
     }

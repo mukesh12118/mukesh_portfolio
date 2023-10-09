@@ -1,20 +1,27 @@
 import { PngImage } from "../SharedComponents/ImageComponent";
 import "./projects.scss";
+import uuid from 'react-uuid';
 
 export const Projects = () => {
 
     const project = [
+        // Techlogo
         {
-            title: 'Admin Analytics',
-            technology: ['react', 'bootstrap'],
-            desc: 'A dashboard used to see customer data for view',
-            imgName:'project1'
+            title: 'Business Analytics Dashboard',
+            technology: ['React', 'Bootstrap', 'Redux', 'React-Redux', 'Sass'],
+            keys: ['Sales Overview', 'Usage Statistics', 'Dark & Light Mode'],
+            desc: 'The Sales Analytics Dashboard is a static website designed to provide real-time insights and visualizations of sales data, views, and usage statistics for a business or e-commerce platform. It offers a user-friendly interface to monitor and analyze key performance',
+            imgName: 'project1',
+            link:'https://techlogo-business-analytics.netlify.app/'
         },
+        // Analytics
         {
-            title: 'Dashboard',
-            technology: ['react', 'bootstrap'],
-            desc: 'A dashboard used to see customer data for view',
-            imgName:'project2'
+            title: 'Sales Analytics Dashboard',
+            technology: ['React', 'Bootstrap', 'Redux', 'React-Redux', 'Sass','React-Bootstrap'],
+            keys: ['Sales Overview', 'Usage Statistics', 'Dark & Light Mode', 'Calendar'],
+            desc: 'The Business Analytics Dashboard is a static website designed to provide comprehensive insights into overall sales, views, usage, and communication within a business or organization. This versatile platform offers users the ability to monitor key performance indicators (KPIs), visualize data with interactive charts and plan events with a calendar feature.',
+            imgName: 'project2',
+            link:'https://sales-analytics.netlify.app/'
         }
     ]
 
@@ -26,28 +33,46 @@ export const Projects = () => {
             <div className="mains">
                 {
                     project.map((Val, i) => {
-                        const { title, technology, desc,imgName } = Val
+                        const { title, technology, desc, imgName, keys,link } = Val;
                         return (
-                            <div className="project" key={i}>
-                                <div className="left_container">
-                                    <h4>{title}</h4>
-                                    <div className="desc">
-                                        <p>{desc}</p>
-                                    </div>
-                                    <p>Technology used</p>
-                                    <ul>
-                                        {
-                                            technology.map((tech, i) => {
-                                                return (
-                                                    <li key={i + 'a'}>{tech}</li>
-                                                )
-                                            })
-                                        }
-                                    </ul>
+                            <div className="project_mains" key={uuid()}>
+                                <h4 className="project_head" data={title}>{title}</h4>
 
-                                </div>
-                                <div className="right_container">
-                                    <PngImage imageName={imgName} />
+                                <div className="project" >
+                                    <div className="left_container">
+                                        <div className="desc">
+                                            <p>{desc}</p>
+                                        </div>
+                                        <a target="_blank" href={link}>{link}</a>
+                                        <div className="technology">
+                                            <p className="sub_head">Technology used</p>
+                                            <ul>
+                                                {
+                                                    technology.map((tech, i) => {
+                                                        return (
+                                                            <li key={uuid()}>{tech}</li>
+                                                        )
+                                                    })
+                                                }
+                                            </ul>
+                                        </div>
+                                        <div className="features">
+                                            <p className="sub_head">Features</p>
+                                            <ul>
+                                                {
+                                                    keys.map((tech, i) => {
+                                                        return (
+                                                            <li key={uuid()}>{tech}</li>
+                                                        )
+                                                    })
+                                                }
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <a href={link} target="_blank" title={title} className="right_container" >
+                                        <PngImage imageName={imgName} />
+                                    </a>
                                 </div>
                             </div>
                         )

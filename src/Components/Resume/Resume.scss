@@ -3,15 +3,76 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     .image_container{
         height: 50%;
-        margin: 0 auto;
-        width: 25%;
+        margin:50px auto;
+        width: 50%;
         img{
             height: auto;
             object-fit: contain;
             width: 100%;
         }
+    }
+    .download_btn{
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 15%;
+        height: max-content;
+        right: 30px;
+        bottom:10%;
+        cursor: pointer;
+        gap: 10px;
+        text-decoration: none;
+        color: #fff;
+        .img_container{
+            transition: 0.3s;
+            height: 40px;
+        }
+        span{
+            display: block;
+            position: relative;
+            transition: 0.4s;
+            &::after{
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 0%;
+                background-color: #9067c6;
+                left: 0;
+                bottom: -4px;
+                transition: 0.4s;
+            }
+        }
+        &:hover{
+            // transform: scale(0.8);
+            span{
+                color:#9067c6;
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:991px){
+    .resume_container .download_btn .img_container{
+        height: 30px;
+    }
+}
+
+@media (max-width:768px){
+    .resume_container .download_btn .img_container{
+        height: 25px;
+    }
+}
+
+
+@media (max-width:768px){
+    .resume_container .download_btn .img_container{
+        height: 20px;
     }
 }

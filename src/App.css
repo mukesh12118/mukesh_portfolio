@@ -1,3 +1,39 @@
+:root{
+  --fs10: 10px;
+--fs11: 11px;
+--fs12: 12px;
+--fs13: 13px;
+--fs14: 14px;
+--fs15: 15px;
+--fs16: 16px;
+--fs17: 17px;
+--fs18: 18px;
+--fs19: 19px;
+--fs20: 20px;
+--fs21: 21px;
+--fs22: 22px;
+--fs23: 23px;
+--fs24: 24px;
+--fs25: 25px;
+--fs26: 26px;
+--fs27: 27px;
+--fs28: 28px;
+--fs29: 29px;
+--fs30: 30px;
+--fs31: 31px;
+--fs32: 32px;
+--fs33: 33px;
+--fs34: 34px;
+--fs35: 35px;
+--fs36: 36px;
+--fs37: 37px;
+--fs38: 38px;
+--fs39: 39px;
+--fs40: 40px;
+--fs45: 45px;
+--width80:80%
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -11,4 +47,63 @@ ul{
   outline: none;
   background-color: transparent;
   cursor: pointer;
+}
+img{
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width:991px){
+  :root{
+    --fs13:11px;
+    --fs14:12px;
+    --fs17:15px;
+    --fs19:16px;
+    --fs20:17px;
+    --fs23:19px;
+    --fs28:24px;
+    --fs30:25px;
+    --fs40:35px;
+    --fs45:40px;
+    --width80:85%;
+  }
+}
+
+@media (max-width:768px){
+  :root{
+    --width80:90%;
+  }
+}
+
+
+@media (max-width:768px){
+  :root{
+    --fs13:10px;
+    --fs14:10px;
+    --fs17:13px;
+    --fs19:15px;
+    --fs20:16px;
+    --fs23:18px;
+    --fs28:22px;
+    --fs30:24px;
+    --fs40:30px;
+    --fs45:35px;
+    --width80:85%;
+  }
+}
+
+@media (max-width:567px){
+  :root{
+    --fs13:10px;
+    --fs14:10px;
+    --fs17:13px;
+    --fs19:15px;
+    --fs20:16px;
+    --fs23:16px;
+    --fs28:17px;
+    --fs30:24px;
+    --fs40:25px;
+    --fs45:30px;
+    --width80:85%;
+  }
 }

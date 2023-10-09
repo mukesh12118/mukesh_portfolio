@@ -5,12 +5,12 @@
         justify-content: space-between;
         align-items: center;
         margin: 0 auto;
-        width: 80%;
+        width: var(--width80);
         color: #bbbbbd;
         height: calc(100vh - 70px);
         .left_container{
             h1{
-                font-size: 40px;
+                font-size: var(--fs40);
                 color: #fff;
                 span{
                     // #e0a432
@@ -19,7 +19,7 @@
             }
             h2{
                 position: relative;
-                font-size: 30px;
+                font-size: var(--fs30);
                 color: transparent;
                 // color: white;
                 &::after{
@@ -53,11 +53,14 @@
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        width: 80%;
+        width: var(--width80);
         h2,p{
-            font-size: 30px;
+            font-size: var(--fs30);
             text-align: center;
             color: #fff;
+        }
+        p{
+            font-size: var(--fs28);
         }
         span{
             color:#9067c6;
@@ -66,18 +69,18 @@
     .contents{
         height: 100vh;
         margin: 0 auto;
-        width:80%;
+        width: var(--width80);
         display: flex;
         align-items: center;
         gap: 10%;
         h4{
             color: #9067c6;
-            font-size: 30px;
+            font-size: var(--fs30);
         }
         p{
             color: #fff;
             font-weight: 500;
-            font-size: 23px;
+            font-size: var(--fs23);
         }
         .right_content{
             width: 50%;
@@ -97,7 +100,7 @@
         flex-direction: column;
         .skills{
             margin: 0 auto;
-            width: 80%;
+            width: var(--width80);
             margin-bottom: 140px;
             ul{
                 margin: 20px 0;
@@ -109,7 +112,7 @@
                 row-gap: 20px;
                 li{
                     list-style: none;
-                    font-size: 28px;
+                    font-size: var(--fs28);
                     text-align: center;
                     text-shadow: 5px 5px  #000;
                     color: #fff;
@@ -117,7 +120,7 @@
                     cursor: pointer;
                     transition: 0.4s;
                     &::first-letter{
-                        font-size: 45px;
+                        font-size: var(--fs45);
                         color: #9067c6;
                     }
                     &:hover{
@@ -137,4 +140,54 @@
 @keyframes animateWidth {
     0%{stroke-width: 0;}
     100%{stroke-width: 1;}
+}
+
+@media (max-width:991px){
+    .main_container{
+        .brief_container{
+            height: auto;
+        }
+        .subs_container{
+            justify-content: center;
+            flex-direction: column;
+            .right_container{
+                width: 70%;
+            }
+        }
+        .contents{
+            flex-direction: column;
+            .right_content,.left_content{
+                width: 75%;
+            }
+        }
+        .skillsets{
+            margin-top: 10px;
+            .skills{
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+@media (max-width:768px){
+    .main_container{
+        .contents{
+            min-height: 80vh;
+            h4{
+                text-align: center;
+                margin: 20px 0;
+            }
+            p{
+                text-align: center;
+            }
+        }
+        .subs_container{
+            justify-content: center;
+            flex-direction: column;
+            .right_container{
+                width: 90%;
+            }
+        }
+        
+    }
 }
