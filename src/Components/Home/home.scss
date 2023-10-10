@@ -172,13 +172,17 @@
 @media (max-width:768px){
     .main_container{
         .contents{
-            min-height: 80vh;
+            height: 100%;
+            min-height: auto;
             h4{
                 text-align: center;
                 margin: 20px 0;
             }
             p{
                 text-align: center;
+            }
+            .right_content{
+                margin: 30px 0;
             }
         }
         .subs_container{

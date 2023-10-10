@@ -41,9 +41,9 @@ export const Projects = () => {
                                 <div className="project" >
                                     <div className="left_container">
                                         <div className="desc">
+                                        <a target="_blank" href={link}>Live Site</a>
                                             <p>{desc}</p>
                                         </div>
-                                        <a target="_blank" href={link}>{link}</a>
                                         <div className="technology">
                                             <p className="sub_head">Technology used</p>
                                             <ul>

@@ -60,7 +60,16 @@ export const Contact = () => {
     }
     useEffect(() => {
         if (isSubmit && Object.keys(errData).length === 0) {
-            emailjs.send(serviceId,templateId, formData, 'W0SyFmS_OPcBZAuPE')
+
+            const emailParams = {
+                from_email : formData.email,
+                to_email : 'iammukesha@gmail.com',
+                name : formData.name,
+                subject : 'Mukesh Portfolio',
+                message : formData.message
+            }
+
+            emailjs.send(serviceId,templateId, emailParams,'W0SyFmS_OPcBZAuPE')
             .then((response) => {
                console.log('SUCCESS!', response.status, response.text);
                setFormData(initialData)

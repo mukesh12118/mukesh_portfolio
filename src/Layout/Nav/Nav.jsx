@@ -28,8 +28,8 @@ export const Nav = () => {
 
     const navData = [
         { imgSrc: 'home', header: 'Home', path: '/' },
-        { imgSrc: 'contact', header: 'Contact', path: '/contact' },
         { imgSrc: 'coding', header: 'Projects', path: '/projects' },
+        { imgSrc: 'contact', header: 'Contact', path: '/contact' },
         { imgSrc: 'resume', header: 'Resume', path: '/resume' },
     ]
     function onChangeCheck(e){

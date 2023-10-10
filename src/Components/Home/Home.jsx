@@ -431,7 +431,23 @@ export function Home() {
                 <p>I am a Front-end UI developer with <span>1.5 years</span> of experience. I love the process of changing a raw design into a product.</p>
                 <p>I specialize in crafting seamless digital experiences that bridge design and functionality.</p>
             </div>
+            <div className="skillsets">
+                <h1>My <span>Skills</span></h1>
 
+                <div className="skills">
+                    <ul>
+                        {
+                            skills.map((val, i) => {
+                                return (
+                                    <React.Fragment key={i}>
+                                        <li>{val.name}</li>
+                                    </React.Fragment>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+            </div>
             <div className="contents">
                 <div className="left_content">
                     <div>
@@ -562,23 +578,7 @@ export function Home() {
                 </div>
             </div>
 
-            <div className="skillsets">
-                <h1>My <span>Skills</span></h1>
-
-                <div className="skills">
-                    <ul>
-                        {
-                            skills.map((val, i) => {
-                                return (
-                                    <React.Fragment key={i}>
-                                        <li>{val.name}</li>
-                                    </React.Fragment>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
-            </div>
+          
         </div>
     )
 }

@@ -5,13 +5,17 @@
     }
     .mains{
         .project_mains{
-            width: 70%;
+            width: 80%;
             margin: 30px auto;
+            padding: 3%;
+            box-shadow: 0 3px 5px 0px #000;
+            transition: 0.4s;
             h4.project_head{
                 color: aqua;
                 font-size: var(--fs28);
                 text-align: center;
                 position: relative;
+                margin: 0 0 20px 0;
                 &::after{
                     content: "";
                     position: absolute;
@@ -23,6 +27,7 @@
                 justify-content: center;
                 align-items: center;
                 gap: 8%;
+                padding-bottom: 30px;
                 .left_container{
                     width: 50%;
                     h4,p{
@@ -30,12 +35,19 @@
                     }
                     p{
                         margin: 0;
+                        text-align: justify;
+                        font-size: var(--fs14);
                     }
                     .sub_head{
                         font-weight: 500;
                         font-size: var(--fs19);
                         margin-top: 20px;
                         color: #9067c6;
+                    }
+                    a{
+                        color: #9067c6;
+                        margin: 10px 0;
+                        display: block;
                     }
                     ul{
                         display: flex;
@@ -48,6 +60,7 @@
                             color: #fff;
                             white-space: nowrap;
                             text-transform: capitalize;
+                            font-size: var(--fs17);
                             &::after{
                                 content: ",";
                                 position: absolute;
@@ -63,6 +76,7 @@
                 }
                 .right_container{
                     width: 50%;
+                    text-align: center;
                     img{
                         height: 100%;
                         border-radius: 10px;
@@ -70,6 +84,10 @@
                         max-width: 400px;
                     }
                 }
+               
+            }
+            &:hover{
+                box-shadow: 0 4px 8px 0px #000;
             }
         }
     }
