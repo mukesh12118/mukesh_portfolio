@@ -34,7 +34,6 @@ export const Nav = () => {
     ]
     function onChangeCheck(e){
         const {checked} = e.target;
-        console.log(checked)
         setSidebarTogg(checked);
     }
     return (

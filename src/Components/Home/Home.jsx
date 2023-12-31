@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./home.scss";
 export function Home() {
 
@@ -16,6 +16,35 @@ export function Home() {
         { name: 'Bootstrap' },
     ]
 
+    const [exp, setExp] = useState(1);
+
+    useEffect(() => {
+        // m/d/y
+
+        const d = "11/05/2021"
+        const startDate = new Date(d);
+        const startMonth = startDate.getMonth();
+        const startYear = startDate.getFullYear();
+
+        const date = new Date();
+        const currentMonth = date.getMonth();
+        const currentYear = date.getFullYear();
+
+        let totalMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth);
+        const totalYears = Math.floor(totalMonths / 12);
+        totalMonths = totalMonths % 12;
+        const yearString = totalYears > 0 ? `${totalYears} year${totalYears !== 1 ? 's' : ''}` : '';
+        const monthString = totalMonths > 0 ? `${totalMonths} month${totalMonths !== 1 ? 's' : ''}` : '';
+
+        const result = yearString && monthString ? `${yearString} and ${monthString}` : yearString + monthString;
+
+       
+        setExp(result);
+
+    }, [])
+
+
+
 
     return (
         <div className="main_container">
@@ -23,7 +52,7 @@ export function Home() {
                 <div className="left_container">
                     <h1>Hi There!</h1>
                     <h1>I'M <span>MUKESH</span></h1>
-                    <h2 data="UI Developer">UI Developer</h2>
+                    <h2 data="Frontend Developer">Frontend Developer</h2>
                 </div>
                 <div className="right_container">
                     <svg xmlns="http://www.w3.org/2000/svg" id="a" width="865.76" height="682.89" viewBox="0 0 865.76 682.89">
@@ -428,7 +457,7 @@ export function Home() {
             </div>
             <div className="brief_container">
                 <h2>Brief <span>Introduction</span></h2>
-                <p>I am a Front-end UI developer with <span>1.5 years</span> of experience. I love the process of changing a raw design into a product.</p>
+                <p>I am a Front-end UI developer with <span>{exp}</span> of experience. I love the process of changing a raw design into a product.</p>
                 <p>I specialize in crafting seamless digital experiences that bridge design and functionality.</p>
             </div>
             <div className="skillsets">
@@ -578,7 +607,7 @@ export function Home() {
                 </div>
             </div>
 
-          
+
         </div>
     )
 }

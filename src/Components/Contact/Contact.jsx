@@ -5,12 +5,6 @@ import emailjs from 'emailjs-com';
 // import { SMTPClient } from "emailjs";
 
 export const Contact = () => {
-    // const client = new SMTPClient({
-    //     user: 'Mukesh',
-    //     password: 'WTBz-9dyg#$ud9$',
-    //     host: 'smtp.iammukesha@gmail.com',
-    //     ssl: true,
-    // });
     const templateParams = {
         name: 'James',
         notes: 'Check this out!'
@@ -28,6 +22,8 @@ export const Contact = () => {
     const [formData, setFormData] = useState(initialData);
     const [isSubmit, setIsSubmit] = useState(false);
     const [errData, setErrData] = useState({});
+    const [successMesg, setSuccessMesg] = useState({ text: '', status: false });
+    const [isPopup, setIsPopup] = useState(false)
 
     function validateForm() {
         let err = {};
@@ -62,32 +58,35 @@ export const Contact = () => {
         if (isSubmit && Object.keys(errData).length === 0) {
 
             const emailParams = {
-                from_email : formData.email,
-                to_email : 'iammukesha@gmail.com',
-                name : formData.name,
-                subject : 'Mukesh Portfolio',
-                message : formData.message
+                from_email: formData.email,
+                to_email: 'iammukesha@gmail.com',
+                name: formData.name,
+                subject: 'Mukesh Portfolio',
+                message: formData.message
             }
 
-            emailjs.send(serviceId,templateId, emailParams,'W0SyFmS_OPcBZAuPE')
-            .then((response) => {
-               console.log('SUCCESS!', response.status, response.text);
-               setFormData(initialData)
-            }, (err) => {
-               console.log('FAILED...', err);
-            });;
-
+            emailjs.send(serviceId, templateId, emailParams, 'W0SyFmS_OPcBZAuPE')
+                .then((response) => {
+                    setSuccessMesg({ text: 'Thank you for your message :)', status: true })
+                    setFormData(initialData);
+                    togglePopup()
+                }, (err) => {
+                    setSuccessMesg({ text: 'Failed...', status: false });
+                    togglePopup()
+                });
         }
     }, [isSubmit]);
-
-    function submitMailForm() {
-
-    }
 
     function submitHandler(e) {
         e.preventDefault();
         validateForm();
         setIsSubmit(true);
+    }
+    function togglePopup() {
+        setIsPopup(true);
+        setTimeout(() => {
+            setIsPopup(false)
+        }, 1000);
     }
     return (
         <div className="contact_container">
@@ -139,46 +138,12 @@ export const Contact = () => {
                         <button className="no_border">Submit</button>
                     </form>
                 </div>
+                {isPopup && <div className="success_container">
+                    <h3 className={successMesg.status ? 'success' : 'err'}>{successMesg.text}</h3>
+                </div>}
+
             </div>
 
         </div>
-        // <div className="contact_container">
-        //     <h1>Get in <span>touch</span></h1>
-
-        //     <form name="contact" method="post" onSubmit={submitHandler}>
-        //         <input type="hidden" name="contact" value="contact"/>
-        //         <div className="inp_container">
-        //             <label>
-        //                 <span>Full Name</span>
-        //                 <input
-        //                     className={errData.nameErr ? 'err' : ''}
-        //                     type="text" onChange={e => inpHandler(e, "name")}
-        //                     value={formData.name} />
-        //                 {errData.nameErr && <p className="err_mesg">{errData.nameErr}</p>}
-        //             </label>
-        //             <label>
-        //                 <span>E-mail</span>
-        //                 <input
-        //                     className={errData.emailErr ? 'err' : ''}
-        //                     type="text" onChange={e => inpHandler(e, "email")}
-        //                     value={formData.email} />
-        //                 {errData.emailErr && <p className="err_mesg">{errData.emailErr}</p>}
-
-        //             </label>
-        //         </div>
-        //         <div className="inp_container">
-        //             <textarea
-        //             className={errData.messageErr ? 'err' : ''}
-        //             name="" id="" cols="30" rows="10"
-        //             onChange={e => inpHandler(e, "message")}
-        //             placeholder="Drop me a line..."
-        //             value={formData.message}
-        //             ></textarea>
-        //             {/* {errData.messageErr && <p className="err_mesg">{errData.messageErr}</p>} */}
-        //         </div>
-
-        //         <button className="no_border">Submit</button>
-        //     </form>
-        // </div>
     )
 }

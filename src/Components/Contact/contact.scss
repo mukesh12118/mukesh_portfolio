@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     h1{
         text-align: center;
         margin: 3% 0;
@@ -12,6 +13,7 @@
         margin: 0 auto;
         align-items: center;
         width: var(--width80);
+       
         .left_container,.right_container{
             width: 50%;
         }
@@ -22,6 +24,24 @@
                 width: 100%;
             }
 
+        }
+    }
+    .success_container{
+        position: fixed;
+        color: green;
+        top: 100px;
+        right: 20px;
+        padding: 5px 20px;
+        min-width: 100px;
+        h3{
+            font-size: var(--fs20);
+            margin: 0;
+            &.success{
+                color: green;
+            }
+            &.err{
+                color: #f00;
+            }
         }
     }
 
