@@ -12,9 +12,11 @@
             h1{
                 font-size: var(--fs40);
                 color: #fff;
+                display: flex;
+                
                 span{
-                    // #e0a432
                     color:#9067c6;
+                    padding-left: 10px;
                 }
             }
             h2{

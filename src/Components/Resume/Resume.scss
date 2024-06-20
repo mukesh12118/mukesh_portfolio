@@ -18,7 +18,7 @@
     .download_btn{
         display: flex;
         align-items: center;
-        position: fixed;
+        // position: fixed;
         top: 15%;
         height: max-content;
         right: 0px;
@@ -35,8 +35,9 @@
             display: block;
             position: relative;
             transition: 0.4s;
-            width: 0;
-            overflow: hidden;
+            // width: 0;
+            white-space: nowrap;
+            // overflow: hidden;
             &::after{
                 content: "";
                 position: absolute;
@@ -50,7 +51,7 @@
         }
         transition: 0.4s;
         &:hover{
-            transform: scale(1.1);
+            transform: scale(1.05);
             span{
                 color:#9067c6;
                 &::after{

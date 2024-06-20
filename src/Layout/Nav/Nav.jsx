@@ -28,7 +28,7 @@ export const Nav = () => {
 
     const navData = [
         { imgSrc: 'home', header: 'Home', path: '/' },
-        { imgSrc: 'coding', header: 'Projects', path: '/projects' },
+        // { imgSrc: 'coding', header: 'Projects', path: '/projects' },
         { imgSrc: 'contact', header: 'Contact', path: '/contact' },
         { imgSrc: 'resume', header: 'Resume', path: '/resume' },
     ]
@@ -48,7 +48,7 @@ export const Nav = () => {
                             const { imgSrc, header, path } = val
                             return (
                                 <li key={i}>
-                                    <Link to={path} onClick={()=> setSidebarTogg(false)} className={locate == path ? 'active' : ''} title={header}>
+                                    <Link to={path} onClick={()=> setSidebarTogg(false)} className={locate === path ? 'active' : ''} title={header}>
                                         <PngImage
                                             imageName={imgSrc}
                                             alt={header}

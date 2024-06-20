@@ -9,11 +9,13 @@ export function Home() {
         { name: 'Typescript' },
         { name: 'React' },
         { name: 'Angular' },
+        { name: 'React Native' },
         { name: 'Tailwind' },
         { name: 'Prime Ng' },
         { name: 'Angular Material' },
         { name: 'Git' },
         { name: 'Bootstrap' },
+        { name: 'Figma' },
     ]
 
     const [exp, setExp] = useState(1);
@@ -21,7 +23,7 @@ export function Home() {
     useEffect(() => {
         // m/d/y
 
-        const d = "11/05/2021"
+        const d = "11/10/2021"
         const startDate = new Date(d);
         const startMonth = startDate.getMonth();
         const startYear = startDate.getFullYear();
@@ -51,8 +53,8 @@ export function Home() {
             <div className="subs_container">
                 <div className="left_container">
                     <h1>Hi There!</h1>
-                    <h1>I'M <span>MUKESH</span></h1>
-                    <h2 data="Frontend Developer">Frontend Developer</h2>
+                    <h1>I'm  <span>MUKESH</span></h1>
+                    <h2 data="UI Developer">UI Developer</h2>
                 </div>
                 <div className="right_container">
                     <svg xmlns="http://www.w3.org/2000/svg" id="a" width="865.76" height="682.89" viewBox="0 0 865.76 682.89">

@@ -12,12 +12,12 @@ export const Resume = () => {
                 </div>
                 <span>Download Resume</span>
             </a>
-            <div className="image_container">
+            <a className="image_container" href={require('./Mukesh_resume.pdf')} download="Mukesh_resume.pdf">
                 <JpgImage
                     imageName='mukesh_resume'
                     alt='Resume'
                 />
-            </div>
+            </a>
 
 
         </div>
